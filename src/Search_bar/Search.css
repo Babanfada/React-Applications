@@ -1,0 +1,14 @@
+.search {
+  display: flex;
+  border: 1px solid red;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 3px;
+  gap:5px;
+  padding: 5px;
+}
+#input {
+  border: none;
+  outline: none;
+  width: 50vw;
+}
