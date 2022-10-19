@@ -4,11 +4,11 @@ import "./Note.css";
 import { useContext } from "react";
 import { nameContext } from "../App";
 
-const Note = ({ id, text, date}) => {
-  const { deleteNote, count } = useContext(nameContext); //remember to always destruture if more than one value in the provider
+const Note = ({ id, text, date, idx}) => {
+  const { deleteNote} = useContext(nameContext); //remember to always destruture if more than one value in the provider
   return (
     <div className="note">
-      <h1>{count}</h1>
+      <h1>{idx + 1}</h1>
       <p>{text}</p>
 
       <div className="date">

@@ -7,8 +7,8 @@ import Header from "./Header/Header";
 export const nameContext = createContext();
 function App() {
   const storedData = JSON.parse(localStorage.getItem("noteTextKey"));
-  const [note, setnote] = useState(storedData);
-  const [count, setcount] = useState(1);
+  const [note, setnote] = useState(storedData ? storedData : []);
+  //const [count, setcount] = useState(1);
   const addNote = (noteText, text) => {
     let dates = new Date().toLocaleDateString();
     const newNote = {
@@ -17,16 +17,13 @@ function App() {
       date: dates,
     };
     setnote([...note, newNote]);
-    setcount((previousCount) => previousCount + 1);
+    // setcount((previousCount) => previousCount + 1);
   };
   const deleteNote = (id) => {
     const newNote = note.filter((note) => {
       return note.id !== id;
     });
-
     setnote(newNote);
-
-    console.log(note);
   };
 
   const [searchText, setsearchText] = useState("");
@@ -39,7 +36,7 @@ function App() {
   return (
     <div className={`${mode ? "darkMode" : ""}`}>
       <nameContext.Provider
-        value={{ deleteNote, setsearchText, count, setmode, mode }}
+        value={{ deleteNote, setsearchText, setmode, mode }}
       >
         <div className={"pp"}>
           <Header />
