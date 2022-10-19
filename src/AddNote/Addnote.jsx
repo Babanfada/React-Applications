@@ -1,21 +1,15 @@
-import React, { useState, useContext } from "react";
-import { nameContext } from "../App";
+import React, { useState } from "react";
 import "./Addnote.css";
 const Addnote = ({ handleAddNote }) => {
   const [noteText, setnoteText] = useState("");
   let char = 200;
   const handleChange = (event) => {
     setnoteText(event.target.value);
-    //console.log(noteText);
   };
-  const { myName, surName, Name } = useContext(nameContext);
 
   const handleSaveClick = () => {
-    // if (noteText.trim().length > 0) {
-    //   handleAddNote(noteText);
-    // }
     noteText.trim().length && handleAddNote(noteText);
-    setnoteText("")
+    setnoteText("");
   };
 
   return (

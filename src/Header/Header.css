@@ -1,0 +1,16 @@
+.head{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    width: 70%;
+}
+.head h1{
+    font-weight: bolder;
+}
+.head button{
+    padding: 7px;
+    border-radius: 10px;
+    color: red;
+}
