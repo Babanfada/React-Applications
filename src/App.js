@@ -16,7 +16,7 @@ function App() {
       text: noteText,
       date: dates,
     };
-    setnote([...note, newNote]);
+    setnote([...note, newNote]);//always take note of the data type
     // setcount((previousCount) => previousCount + 1);
   };
   const deleteNote = (id) => {
@@ -36,7 +36,7 @@ function App() {
   return (
     <div className={`${mode ? "darkMode" : ""}`}>
       <nameContext.Provider
-        value={{ deleteNote, setsearchText, setmode, mode }}
+        value={{ deleteNote, setsearchText, setmode }}
       >
         <div className={"pp"}>
           <Header />

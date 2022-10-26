@@ -5,7 +5,7 @@ import { useContext } from 'react'
 
 
 const Header = () => {
-    const { setmode, mode } = useContext(nameContext);
+    const { setmode} = useContext(nameContext);
   return (
     <div className='head'>
        <h1>Note</h1>
