@@ -1,9 +1,20 @@
-import React, { useContext, useState } from "react";
-//import { Form } from "react-router-dom";
+import React, { useContext } from "react";
 import "../styleSheet/inputField.css";
-import managerContext from "./Manager";
+import { contactContext } from "./Manager";
 
-const InputField = ({ handleInputSavely, handleSubmit }) => {
+const InputField = () => {
+  const {
+    firstName,
+    lastName,
+    email,
+    phoneNumber,
+    setfirstName,
+    setlastName,
+    setphoneNumber,
+    setemail,
+    handleSubmit,
+  } = useContext(contactContext);
+
   return (
     <div>
       <form
@@ -11,7 +22,6 @@ const InputField = ({ handleInputSavely, handleSubmit }) => {
         id="form"
         onSubmit={(e) => {
           e.preventDefault();
-    
           handleSubmit();
         }}
       >
@@ -21,7 +31,8 @@ const InputField = ({ handleInputSavely, handleSubmit }) => {
             type="text"
             name="firstName"
             id="text"
-            onChange={(e) => handleInputSavely.handleInput(e)}
+            value={firstName}
+            onChange={(e) => setfirstName(e.target.value)}
           />
         </label>
         <label htmlFor="text1">
@@ -30,7 +41,8 @@ const InputField = ({ handleInputSavely, handleSubmit }) => {
             type="text"
             name="lastName"
             id="text1"
-            onChange={(e) => handleInputSavely.handleInput(e)}
+            value={lastName}
+            onChange={(e) => setlastName(e.target.value)}
           />
         </label>
         <label htmlFor="text2">
@@ -39,7 +51,8 @@ const InputField = ({ handleInputSavely, handleSubmit }) => {
             type="email"
             name="email"
             id="text2"
-            onChange={(e) => handleInputSavely.handleInput(e)}
+            value={email}
+            onChange={(e) => setemail(e.target.value)}
           />
         </label>
         <label htmlFor="text3">
@@ -48,14 +61,14 @@ const InputField = ({ handleInputSavely, handleSubmit }) => {
             type="number"
             name="phoneNumber"
             id="text3"
-            onChange={(e) => handleInputSavely.handleInput(e)}
+            value={phoneNumber}
+            onChange={(e) => setphoneNumber(e.target.value)}
           />
         </label>
         <button type="submit" onSubmit={(e) => handleSubmit(e)}>
           {" "}
           Submit
         </button>
-        <button type="reset"> Reset</button>
       </form>
 
       {/* remember to always call event  fuctions by wrapping them inside a call back function */}
