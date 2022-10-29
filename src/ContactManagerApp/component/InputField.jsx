@@ -1,4 +1,8 @@
+import Button from "react-bootstrap/Button";
 import React, { useContext } from "react";
+import { MdDarkMode } from "react-icons/md";
+//import { MdOutlineDarkMode } from "react-icons/md";
+import { CgDarkMode } from "react-icons/cg";
 import "../styleSheet/inputField.css";
 import { contactContext } from "./Manager";
 
@@ -13,10 +17,16 @@ const InputField = () => {
     setphoneNumber,
     setemail,
     handleSubmit,
+    darkmode,
+    handleDarkMode,
   } = useContext(contactContext);
 
   return (
     <div>
+      <button onClick={handleDarkMode}>
+        {darkmode ? <CgDarkMode /> : <MdDarkMode />}
+      </button>
+
       <form
         action=""
         id="form"

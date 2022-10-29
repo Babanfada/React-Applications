@@ -11,8 +11,17 @@ const Manager = () => {
   const [email, setemail] = useState("");
   const [phoneNumber, setphoneNumber] = useState(0);
   const [dataArray, setdataArray] = useLocalStorage("Contacts", []); //TAKE NOTE
-  //const[id,setid] =useState(nanoid())
+  const [darkmode, setdarkmode] = useLocalStorage(false);
 
+  const mystyle = {
+    backgroundColor: "black",
+    color: "white",
+  };
+
+  const handleDarkMode = () => {
+    setdarkmode((prev) => !prev);
+    console.log(darkmode)
+  };
   const handleSubmit = () => {
     if (firstName && lastName && email && phoneNumber) {
       const data = { firstName, lastName, email, phoneNumber }; //TAKE NOTE
@@ -30,13 +39,28 @@ const Manager = () => {
     let dataArrayCopy = [...dataArray].filter((copy, idx) => {
       return index !== idx;
     });
-
     console.log(dataArray);
     setdataArray(dataArrayCopy);
   };
 
+  const handleEdit = (index) => {
+    console.log(index);
+    let dataArrayCopy = [...dataArray].filter((copy, idx) => {
+      return index !== idx;
+    });
+    setdataArray(dataArrayCopy);
+    let dataSelected = [...dataArray].find((copy, idx) => {
+      return index === idx;
+    });
+
+    setfirstName(dataSelected.firstName);
+    setlastName(dataSelected.lastName);
+    setemail(dataSelected.email);
+    setphoneNumber(dataSelected.phoneNumber);
+  };
+
   return (
-    <div className="manager">
+    <div className={`manager`} style={darkmode ? mystyle : {}}>
       <contactContext.Provider // Always wrap provider inside the containing div
         value={{
           firstName,
@@ -51,6 +75,8 @@ const Manager = () => {
           setemail,
           handleSubmit,
           handleDelete,
+          handleEdit,
+          handleDarkMode
         }}
       >
         <InputField />

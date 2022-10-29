@@ -1,14 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { contactContext } from "./Manager";
 
 // You only need {} when you are inside jsx/html
 const TbodySubmit = () => {
-  const { dataArray, handleDelete } = useContext(contactContext);
-  const [toggle, settoggle] = useState(true);
-
-  const handleToggle = () => {
-    settoggle((prev) => !prev);
-  };
+  const { dataArray, handleDelete, handleEdit } = useContext(contactContext);
 
   return dataArray.map((data, index) => {
     return (
@@ -20,23 +15,13 @@ const TbodySubmit = () => {
           <td>{data.email}</td>
           <td>{data.phoneNumber}</td>
           <td>
-            {toggle ? (
-              <input
-                onClick={() => {
-                  handleToggle();
-                }}
-                type="button"
-                value="Edit"
-              />
-            ) : (
-              <input
-                onClick={() => {
-                  handleToggle();
-                }}
-                type="button"
-                value="Update"
-              />
-            )}
+            <input
+              onClick={(e) => {
+                handleEdit(index);
+              }}
+              type="button"
+              value="Edit"
+            />
 
             <input
               onClick={() => {
