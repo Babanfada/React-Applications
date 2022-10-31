@@ -20,7 +20,7 @@ const Manager = () => {
 
   const handleDarkMode = () => {
     setdarkmode((prev) => !prev);
-    console.log(darkmode)
+    console.log(darkmode);
   };
   const handleSubmit = () => {
     if (firstName && lastName && email && phoneNumber) {
@@ -35,6 +35,7 @@ const Manager = () => {
       alert(`you gatta fill all this shit out`);
     }
   };
+  //NB shortcircut operator evaluate to truthy/falsy value without setting to state
   const handleDelete = (index) => {
     let dataArrayCopy = [...dataArray].filter((copy, idx) => {
       return index !== idx;
@@ -44,7 +45,6 @@ const Manager = () => {
   };
 
   const handleEdit = (index) => {
-    console.log(index);
     let dataArrayCopy = [...dataArray].filter((copy, idx) => {
       return index !== idx;
     });
@@ -52,6 +52,7 @@ const Manager = () => {
     let dataSelected = [...dataArray].find((copy, idx) => {
       return index === idx;
     });
+    console.log(dataArrayCopy, dataSelected);
 
     setfirstName(dataSelected.firstName);
     setlastName(dataSelected.lastName);
@@ -76,7 +77,7 @@ const Manager = () => {
           handleSubmit,
           handleDelete,
           handleEdit,
-          handleDarkMode
+          handleDarkMode,
         }}
       >
         <InputField />
