@@ -1,0 +1,21 @@
+.head{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    width: 70%;
+}
+.head h1{
+    font-weight: bolder;
+    font-family: "Lobster", cursive;
+}
+.head Button{
+    padding: 7px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.head Button:hover{
+    transform: scale(1.2);
+}

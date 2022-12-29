@@ -1,0 +1,35 @@
+.note {
+  border: 1px solid black;
+  width: 20vw;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+}
+.note p {
+  text-transform: capitalize;
+  font-weight: 300;
+  white-space: pre-wrap;
+  font-family: "Lobster", cursive;
+}
+.note h1 {
+  font-family: "Lobster", cursive;
+  font-size: x-small;
+}
+.date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Lobster", cursive;
+}
+.date p {
+  color: rgb(213, 219, 123);
+}
+.delete:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .note {
+    width: 200px;
+  }
+}

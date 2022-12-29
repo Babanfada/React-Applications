@@ -1,5 +1,0 @@
-.App{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* border: 2px solid black; */
-}

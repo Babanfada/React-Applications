@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className={`${mode ? "darkMode" : ""}`}>
-      <nameContext.Provider value={{ deleteNote, setsearchText, setmode }}>
+      <nameContext.Provider value={{ deleteNote, setsearchText, setmode, mode }}>
         <div className={"pp"}>
           <Header />
           <Search />

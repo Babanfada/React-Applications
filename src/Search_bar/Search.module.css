@@ -1,0 +1,20 @@
+.search {
+  display: flex;
+  border: 1px solid black;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 3px;
+  gap:10px;
+  padding-left: 5px;
+  align-items: center;
+  background-color: transparent;
+}
+.search input {
+  border: none;
+  outline: none;
+  width: 50vw;
+  height:30px;
+  background-color: transparent;
+  font-family: "Lobster", cursive;
+  /* color: red; */
+}

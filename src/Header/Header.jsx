@@ -1,19 +1,30 @@
-import React from 'react'
-import "./Header.css"
-import { nameContext } from '../App'
-import { useContext } from 'react'
-
+import React from "react";
+import styles from "./Header.module.css";
+import { nameContext } from "../App";
+import { useContext } from "react";
+import Button from "react-bootstrap/Button";
+import { MdDarkMode } from "react-icons/md";
+import { CgDarkMode } from "react-icons/cg";
 
 const Header = () => {
-    const { setmode} = useContext(nameContext);
+  const { setmode, mode } = useContext(nameContext);
+  const mystyle ={
+    color:"white",
+  }
   return (
-    <div className='head'>
-       <h1>Note</h1>
-       <button onClick={()=>{setmode(previousState => !previousState)
-      
-    }}>Toggle Mode</button>
-    </div>
-  )
-}
+    <div className={styles.head}>
+      <h1>Note</h1>
 
-export default Header
+      <Button
+        style={mode ? mystyle : {}}
+        onClick={() => {
+          setmode((previousState) => !previousState);
+        }}
+      >
+        {setmode ? <CgDarkMode /> : <MdDarkMode />}
+      </Button>
+    </div>
+  );
+};
+
+export default Header;

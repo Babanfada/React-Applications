@@ -1,0 +1,45 @@
+.count {
+  display: flex;
+  justify-content: space-between;
+  /* border: 2px solid red; */
+}
+.count p {
+  /* color: blue; */
+  font-family: "Lobster", cursive;
+}
+.count Button {
+  background-color: transparent;
+  /* border: 1px solid black; */
+  border-radius: 2px;
+  font-family: "Lobster", cursive;
+  border: none;
+}
+.count Button:hover {
+  cursor: pointer;
+  background-color: rgb(225, 236, 240);
+}
+
+.wrapper {
+  border: 1px solid black;
+  width: 18.7vw;
+  border-radius: 5px;
+  padding: 10px;
+}
+.wrapper textarea {
+  width: 20vw;
+  resize: none;
+  font-family: "Lobster", cursive;
+  background-color: transparent;
+  border: none;
+}
+.wrapper textarea:focus {
+  outline: none;
+}
+.wrapper textarea::placeholder {
+  font-family: "Lobster", cursive;
+}
+@media (max-width: 950px) {
+  .wrapper {
+    width: 200px;
+  }
+}
