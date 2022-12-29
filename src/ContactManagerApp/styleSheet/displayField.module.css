@@ -6,19 +6,20 @@
   justify-content: center;
 }
 .wrapper table {
-  /* border: 2px solid red; */
+  border: 1px solid black;
   width: 100%;
   border-collapse: collapse;
+  color: black;
 }
 /* .wrapper thead {
   /* border: 1px solid rgb(200, 255, 0); */
 /* width: 50vw; 
 } */
 .wrapper tr td {
-  border: 1px solid rgb(234, 0, 255);
+  /* border: 1px solid white; */
   font-weight: bolder;
   font-family: "Lobster", cursive;
   font-size: 2vw;
- 
+
   /* width: 50vw; */
 }

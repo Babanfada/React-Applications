@@ -2,11 +2,11 @@
   display: grid;
   /* grid-template-columns: repeat(autofit,  min-max(150px, 1fr)); */
   grid-template-columns: repeat(3, 1fr);
-  border: 2px solid white;
+  /* border: 2px solid white; */
   width: 95%;
   padding: 2vw;
   overflow-x: hidden;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   gap: 1vw;
 }
 

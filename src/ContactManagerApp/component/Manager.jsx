@@ -36,7 +36,7 @@ const Manager = () => {
     }
   };
   //NB shortcircut operator evaluate to truthy/falsy value without setting to state
-  
+
   const handleDelete = (index) => {
     let dataArrayCopy = [...dataArray].filter((copy, idx) => {
       return index !== idx;
@@ -79,7 +79,9 @@ const Manager = () => {
           handleDelete,
           handleEdit,
           handleDarkMode,
-          mystyle
+          mystyle,
+          darkmode,
+          setdarkmode,
         }}
       >
         <InputField />

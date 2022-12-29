@@ -1,8 +1,6 @@
 import Button from "react-bootstrap/Button";
 import React, { useContext } from "react";
-import { MdDarkMode } from "react-icons/md";
-
-import { CgDarkMode } from "react-icons/cg";
+import { MdDarkMode, MdLightbulb } from "react-icons/md";
 import styles from "../styleSheet/inputField.module.css";
 import { contactContext } from "./Manager";
 
@@ -21,14 +19,13 @@ const InputField = () => {
     handleDarkMode,
   } = useContext(contactContext);
   const mystyle = {
-    backgroundColor: "black",
     color: "white",
-    border: "1px solid",
+    border: "1px solid white",
   };
   return (
     <div className={styles.wrapper}>
       <Button className={styles.darkmode} onClick={handleDarkMode}>
-        {darkmode ? <CgDarkMode /> : <MdDarkMode />}
+        {darkmode ? <MdLightbulb /> : <MdDarkMode color="black" />}
       </Button>
 
       <form
@@ -40,7 +37,7 @@ const InputField = () => {
           handleSubmit();
         }}
       >
-        <label  htmlFor="text">
+        <label htmlFor="text">
           <span>FirstName</span>
 
           <input
@@ -49,7 +46,7 @@ const InputField = () => {
             id="text"
             value={firstName}
             onChange={(e) => setfirstName(e.target.value)}
-            style={darkmode ? {} : mystyle}
+            style={darkmode ? mystyle : {}}
           />
         </label>
         <label htmlFor="text1">
@@ -61,7 +58,7 @@ const InputField = () => {
             id="text1"
             value={lastName}
             onChange={(e) => setlastName(e.target.value)}
-            style={darkmode ? {} : mystyle}
+            style={darkmode ? mystyle : {}}
           />
         </label>
         <label htmlFor="text2">
@@ -73,7 +70,7 @@ const InputField = () => {
             id="text2"
             value={email}
             onChange={(e) => setemail(e.target.value)}
-            style={darkmode ? {} : mystyle}
+            style={darkmode ? mystyle : {}}
           />
         </label>
         <label htmlFor="text3">
@@ -86,7 +83,7 @@ const InputField = () => {
             maxLength={12}
             value={phoneNumber}
             onChange={(e) => setphoneNumber(e.target.value)}
-            style={darkmode ? {} : mystyle}
+            style={darkmode ? mystyle : {}}
           />
         </label>
         <button

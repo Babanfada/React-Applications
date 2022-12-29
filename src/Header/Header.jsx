@@ -3,14 +3,13 @@ import styles from "./Header.module.css";
 import { nameContext } from "../App";
 import { useContext } from "react";
 import Button from "react-bootstrap/Button";
-import { MdDarkMode } from "react-icons/md";
-import { CgDarkMode } from "react-icons/cg";
+import { MdDarkMode, MdLightbulb } from "react-icons/md";
 
 const Header = () => {
   const { setmode, mode } = useContext(nameContext);
-  const mystyle ={
-    color:"white",
-  }
+  const mystyle = {
+    color: "white",
+  };
   return (
     <div className={styles.head}>
       <h1>Note</h1>
@@ -21,7 +20,7 @@ const Header = () => {
           setmode((previousState) => !previousState);
         }}
       >
-        {setmode ? <CgDarkMode /> : <MdDarkMode />}
+        {mode ? <MdLightbulb /> : <MdDarkMode />}
       </Button>
     </div>
   );
