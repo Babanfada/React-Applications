@@ -17,11 +17,12 @@ const Note = ({ id, text, date, idx}) => {
       <div className={styles.date}>
         <p>{date}</p>
         <GoTrashcan
-          className={"delete"}
+        title="delete"
+          className={styles.delete}
           onClick={() => {
             deleteNote(id);
           }}
-          style={{ color: "red" }}
+          style={{ color: "rgb(165, 34, 34)" }}
         />
       </div>
     </div>
