@@ -7,11 +7,15 @@ import styles from "../styleSheet/displayField.module.css";
 
 // You only need {} when you are inside jsx/html
 const TbodySubmit = () => {
-  const { dataArray, handleDelete, handleEdit } = useContext(contactContext);
-
+  const { dataArray, handleDelete, handleEdit, darkmode } =
+    useContext(contactContext);
+  const mystyle = {
+    border: "none",
+    backgroundColor: "transparent",
+  };
   return dataArray.map((data, index) => {
     return (
-      <tbody key={index} >
+      <tbody key={index}>
         <tr>
           <td>{index + 1}</td>
           <td>{data.firstName}</td>
@@ -19,36 +23,29 @@ const TbodySubmit = () => {
           <td>{data.email}</td>
           <td>{data.phoneNumber}</td>
           <td>
-            {/* <input
-              onClick={(e) => {
-                handleEdit(index);
-              }}
-              type="button"
-              value="Edit"
-            /> */}
             <Button
               onClick={(e) => {
                 handleEdit(index);
               }}
+              style={mystyle}
+              className={styles.btn}
             >
-              <AiTwotoneEdit></AiTwotoneEdit>
+              <AiTwotoneEdit
+                color={`${darkmode ? "white" : "black"}`}
+              ></AiTwotoneEdit>
             </Button>
 
             <Button
+              className={styles.btn}
+              style={mystyle}
               onClick={() => {
                 handleDelete(index);
               }}
             >
-              <MdDeleteForever></MdDeleteForever>
+              <MdDeleteForever
+                color={`${darkmode ? "white" : "black"}`}
+              ></MdDeleteForever>
             </Button>
-
-            {/* <input
-              onClick={() => {
-                handleDelete(index);
-              }}
-              type="button"
-              value={`delete`}
-            /> */}
           </td>
         </tr>
       </tbody>

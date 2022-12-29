@@ -23,3 +23,6 @@
 
   /* width: 50vw; */
 }
+.btn:hover {
+  cursor: pointer;
+}
