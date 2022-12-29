@@ -1,11 +1,11 @@
 //import Tbody from "./Tbody";
 import React from "react";
-import "../styleSheet/displayField.css";
+import styles from "../styleSheet/displayField.module.css";
 import TbodySubmit from "./TbodySubmit";
 
 const DisplayField = () => {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <table>
         <thead>
           <tr>

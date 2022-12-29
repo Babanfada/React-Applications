@@ -79,6 +79,7 @@ const Manager = () => {
           handleDelete,
           handleEdit,
           handleDarkMode,
+          mystyle
         }}
       >
         <InputField />

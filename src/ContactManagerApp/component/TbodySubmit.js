@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { contactContext } from "./Manager";
 import { AiTwotoneEdit } from "react-icons/ai";
 import { MdDeleteForever } from "react-icons/md";
+import styles from "../styleSheet/displayField.module.css";
 
 // You only need {} when you are inside jsx/html
 const TbodySubmit = () => {
@@ -10,7 +11,7 @@ const TbodySubmit = () => {
 
   return dataArray.map((data, index) => {
     return (
-      <tbody key={index}>
+      <tbody key={index} >
         <tr>
           <td>{index + 1}</td>
           <td>{data.firstName}</td>

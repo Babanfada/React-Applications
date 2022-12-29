@@ -6,7 +6,6 @@ const Addnote = ({ handleAddNote }) => {
   const handleChange = (event) => {
     setnoteText(event.target.value);
   };
-
   const handleSaveClick = () => {
     noteText.trim().length && handleAddNote(noteText);
     setnoteText("");

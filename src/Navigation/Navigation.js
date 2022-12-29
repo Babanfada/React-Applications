@@ -1,23 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import "./Navigation.css"
-
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./Navigation.module.css";
 
 const Navigation = () => {
   return (
     <div>
-      <ul className='navigation'>
-        <Link to={"/App"}>
-          {" "}
-          <li>Note App</li>
+      <ul className={styles.navigation}>
+        <Link className={styles.link} to={"/App"}>
+          <li>Note Manager</li>
         </Link>
-        <Link to={"/Manager"}>
-          {" "}
-          <li>Manager App</li>
+        <Link className={styles.link} to={"/Manager"}>
+          <li>Contact Manager </li>
         </Link>
       </ul>
     </div>
   );
-}
+};
 
-export default Navigation
+export default Navigation;

@@ -1,0 +1,31 @@
+.navigation {
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+  /* height: 100vh; */
+  background-color: black;
+  overflow: hidden;
+  margin: 0%;
+  padding: 20px;
+}
+
+.link{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: larger;
+  color: green;
+  font-family: "Lobster", cursive;
+  /* border: 1px solid red; */
+  
+}
+.link:hover{
+  color: yellow;
+}
+
+/* @media (max-width: 940px) {
+  .navigation{
+    flex-direction: column; 
+  }
+} */
