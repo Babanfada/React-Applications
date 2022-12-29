@@ -12,7 +12,6 @@ const Search = () => {
   };
   const mystyle2 = {
     color: "white",
-    
   };
   return (
     <div className={styles.search} style={mode ? mystyle : {}}>
@@ -24,7 +23,7 @@ const Search = () => {
         type="text"
         name="input"
         id="input"
-        placeholder="Type to search...."
+        placeholder="Search...."
         style={mode ? mystyle2 : {}}
       />
     </div>
