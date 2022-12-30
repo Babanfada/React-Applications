@@ -16,7 +16,7 @@
 }
 .count Button:hover {
   cursor: pointer;
-  background-color: rgb(225, 236, 240);
+  transform: scale(1.2);
 }
 
 .wrapper {
